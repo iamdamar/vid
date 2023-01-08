@@ -1,5 +1,8 @@
 #240p
 ffmpeg -i input.mkv -vf scale=-2:240 -r 24 -c:v libx265 -b:v 400000 -c:a libopus -b:a 64k output.mkv
 
+#240p 200kbps bitrate
+ffmpeg -i input.mkv -vf scale=-2:240 -r 24 -c:v libx265 -b:v 200000 -c:a libopus -b:a 64k output.mkv
+
 #split
 split -b $(expr $(wc -c < file.txt) / 10) file.txt chunk
